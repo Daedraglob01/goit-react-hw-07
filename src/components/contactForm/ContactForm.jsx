@@ -9,7 +9,7 @@ const validationSchema = Yup.object().shape({
     .min(3, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
-  phone: Yup.string()
+  number: Yup.string()
     .min(3, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
@@ -20,7 +20,7 @@ const ContactForm = () => {
 
   return (
     <Formik
-      initialValues={{ name: "", phone: "" }}
+      initialValues={{ name: "", number: "" }}
       validationSchema={validationSchema}
       onSubmit={(values, actions) => {
         dispatch(addContactThunk(values));
@@ -35,9 +35,9 @@ const ContactForm = () => {
           <ErrorMessage component="div" name="name" className={styles.errorText} />
         </div>
         <div className={styles.inputGroup}>
-          <label htmlFor="phone">Phone</label>
-          <Field name="phone" />
-          <ErrorMessage component="div" name="phone" className={styles.errorText} />
+          <label htmlFor="number">Phone</label>
+          <Field name="number" />
+          <ErrorMessage component="div" name="number" className={styles.errorText} />
         </div>
         <button type="submit" className={styles.submitButton}>
           Add contact
