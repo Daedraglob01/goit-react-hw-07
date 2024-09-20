@@ -2,8 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import styles from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
-import { addContactThunk } from "../../redux/contactsOps";
-
+import { addContactThunk } from "../../redux/contacts/operations";
 const validationSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, "Too Short!")
